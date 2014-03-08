@@ -15,7 +15,7 @@
 </html>
 ```
 
-`javascript.js`
+`javascript.js`:
 ```js
 function test() {
   var foo = 'lorem ipsum';
