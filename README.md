@@ -42,8 +42,6 @@ $ npm install gulp-inline-source --save-dev
 
 ## Usage
 
-Something like this:
-
 ```javascript
 var gulp = require('gulp');
 var inlinesource = require('gulp-inline-source')
