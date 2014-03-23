@@ -44,7 +44,7 @@ $ npm install gulp-inline-source --save-dev
 
 ```javascript
 var gulp = require('gulp');
-var inlinesource = require('gulp-inline-source')
+var inlinesource = require('gulp-inline-source');
 
 gulp.task('inlinesource', function () {
     return gulp.src('./src/*.html')
@@ -57,7 +57,7 @@ Optionally, you can specify a path that will be used as the base directory for t
 
 ```javascript
 var gulp = require('gulp');
-var inlinesource = require('gulp-inline-source')
+var inlinesource = require('gulp-inline-source');
 
 gulp.task('inlinesource', function () {
     return gulp.src('./src/*.html')
