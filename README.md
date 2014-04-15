@@ -7,11 +7,11 @@
 `/path/to/file.html`:
 ```html
 <html>
-<head>
-  <script src="javascript.js" inline></script>
-</head>
-<body>
-</body>
+  <head>
+    <script src="javascript.js" inline></script>
+  </head>
+  <body>
+  </body>
 </html>
 ```
 
@@ -26,11 +26,11 @@ function test() {
 Output:
 ```html
 <html>
-<head>
-  <script>function test(){var a="lorem ipsum";return a}</script>
-</head>
-<body>
-</body>
+  <head>
+    <script>function test(){var a="lorem ipsum";return a}</script>
+  </head>
+  <body>
+  </body>
 </html>
 ```
 
