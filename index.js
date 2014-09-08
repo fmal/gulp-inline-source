@@ -26,7 +26,8 @@ function gulpInlineSource(htmlpath) {
 
         try {
             var filePath = htmlpath || file.cwd;
-            file.contents = new Buffer(inlineSource(filePath, file.contents.toString()));
+            var contents = inlineSource(filePath, file.contents.toString(), {rootpath: filePath});
+            file.contents = new Buffer(contents || '');
         } catch (err) {
             this.emit('error', new gutil.PluginError(PLUGIN_NAME, err));
         }
