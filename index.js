@@ -5,7 +5,7 @@ var fs = require('fs'),
 
 const PLUGIN_NAME = 'gulp-inline-source';
 
-function gulpInlineSource(htmlpath) {
+function gulpInlineSource(htmlpath, options) {
     'use strict';
 
     if (htmlpath && !fs.existsSync(htmlpath)) {
@@ -26,7 +26,10 @@ function gulpInlineSource(htmlpath) {
 
         try {
             var filePath = htmlpath || file.cwd;
-            var contents = inlineSource(filePath, file.contents.toString(), {rootpath: filePath});
+            options = options || {};
+            options.rootpath = options.rootpath || filePath;
+            
+            var contents = inlineSource(filePath, file.contents.toString(), options);
             file.contents = new Buffer(contents || '');
         } catch (err) {
             this.emit('error', new gutil.PluginError(PLUGIN_NAME, err));
