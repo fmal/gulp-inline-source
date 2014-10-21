@@ -53,15 +53,19 @@ gulp.task('inlinesource', function () {
 });
 ```
 
-Optionally, you can specify a path that will be used as the base directory for the sources (relative to gulpfile):
+Optionally, you can provide [some options](https://github.com/popeindustries/inline-source#usage) through an options object:
 
 ```javascript
 var gulp = require('gulp');
 var inlinesource = require('gulp-inline-source');
 
 gulp.task('inlinesource', function () {
+    var options = {
+        compress: false
+    };
+
     return gulp.src('./src/*.html')
-        .pipe(inlinesource('./assets'))
+        .pipe(inlinesource(options))
         .pipe(gulp.dest('./out'));
 });
 ```
