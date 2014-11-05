@@ -15,7 +15,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "inline-source": "1.0.0",
+    "inline-source": "~1.0.0",
     "gulp-util": "~2.2.14",
     "through2": "~0.4.1"
   },
