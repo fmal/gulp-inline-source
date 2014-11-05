@@ -22,7 +22,7 @@ function gulpInlineSource(options) {
         try {
             options = options || {};
 
-            var filePath = file.cwd;
+            var filePath = file.path;
 
             options.rootpath = options.rootpath || filePath;
             

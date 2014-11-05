@@ -4,19 +4,21 @@
 
 ## How it works
 
-`/path/to/file.html`:
 ```html
+<!-- located at src/html/index.html -->
 <html>
   <head>
-    <script src="javascript.js" inline></script>
+    <!-- inline src/js/inlineScript.js -->
+    <script src="../js/inlineScript.js" inline></script>
   </head>
   <body>
   </body>
 </html>
 ```
 
-`javascript.js`:
 ```js
+// located at src/js/inlineScript.js
+
 function test() {
   var foo = 'lorem ipsum';
   return foo;
