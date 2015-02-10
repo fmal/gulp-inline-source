@@ -4,7 +4,7 @@ var inlineSource = require('inline-source'),
 
 const PLUGIN_NAME = 'gulp-inline-source';
 
-function gulpInlineSource(options) {
+function gulpInlineSource (options) {
     'use strict';
 
     var stream = through.obj(function(file, enc, cb) {
