@@ -1,6 +1,6 @@
 {
   "name": "gulp-inline-source",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Inline flagged js & css sources.",
   "license": "MIT",
   "author": "Filip Malinowski <crimhead@gmail.com>",
@@ -15,7 +15,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "inline-source": "1.0.0",
+    "inline-source": "2.0.1",
     "gulp-util": "~2.2.14",
     "through2": "~0.4.1"
   },
