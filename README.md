@@ -4,19 +4,21 @@
 
 ## How it works
 
-`/path/to/file.html`:
 ```html
+<!-- located at src/html/index.html -->
 <html>
   <head>
-    <script src="javascript.js" inline></script>
+    <!-- inline src/js/inlineScript.js -->
+    <script src="../js/inlineScript.js" inline></script>
   </head>
   <body>
   </body>
 </html>
 ```
 
-`javascript.js`:
 ```js
+// located at src/js/inlineScript.js
+
 function test() {
   var foo = 'lorem ipsum';
   return foo;
@@ -53,15 +55,19 @@ gulp.task('inlinesource', function () {
 });
 ```
 
-Optionally, you can specify a path that will be used as the base directory for the sources (relative to gulpfile):
+Optionally, you can provide [some options](https://github.com/popeindustries/inline-source#usage) through an options object:
 
 ```javascript
 var gulp = require('gulp');
 var inlinesource = require('gulp-inline-source');
 
 gulp.task('inlinesource', function () {
+    var options = {
+        compress: false
+    };
+
     return gulp.src('./src/*.html')
-        .pipe(inlinesource('./assets'))
+        .pipe(inlinesource(options))
         .pipe(gulp.dest('./out'));
 });
 ```

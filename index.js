@@ -1,16 +1,11 @@
-var fs = require('fs'),
-    inlineSource = require('inline-source'),
+var inlineSource = require('inline-source'),
     gutil = require('gulp-util'),
     through = require('through2');
 
 const PLUGIN_NAME = 'gulp-inline-source';
 
-function gulpInlineSource(htmlpath) {
+function gulpInlineSource (options) {
     'use strict';
-
-    if (htmlpath && !fs.existsSync(htmlpath)) {
-        throw new gutil.PluginError(PLUGIN_NAME, 'Path ' + htmlpath + ' cannot be found.');
-    }
 
     var stream = through.obj(function(file, enc, cb) {
 
@@ -25,8 +20,13 @@ function gulpInlineSource(htmlpath) {
         }
 
         try {
-            var filePath = htmlpath || file.cwd;
-            var contents = inlineSource(filePath, file.contents.toString(), {rootpath: filePath});
+            options = options || {};
+
+            var filePath = file.path;
+
+            options.rootpath = options.rootpath || filePath;
+            
+            var contents = inlineSource(filePath, file.contents.toString(), options);
             file.contents = new Buffer(contents || '');
         } catch (err) {
             this.emit('error', new gutil.PluginError(PLUGIN_NAME, err));
