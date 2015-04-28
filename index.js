@@ -8,6 +8,7 @@ function gulpInlineSource (options) {
     'use strict';
 
     var stream = through.obj(function(file, enc, cb) {
+        var self = this;
 
         if (file.isNull() || file.isDirectory()) {
             this.push(file);
@@ -19,21 +20,20 @@ function gulpInlineSource (options) {
             return cb();
         }
 
-        try {
-            options = options || {};
+        options = options || {};
 
-            var filePath = file.path;
+        var filePath = file.path;
+        options.rootpath = options.rootpath || filePath;
 
-            options.rootpath = options.rootpath || filePath;
-            
-            var contents = inlineSource(filePath, file.contents.toString(), options);
-            file.contents = new Buffer(contents || '');
-        } catch (err) {
-            this.emit('error', new gutil.PluginError(PLUGIN_NAME, err));
-        }
-
-        this.push(file);
-        return cb();
+        inlineSource(file.contents.toString(), options, function(err, html){
+            if(err){
+                self.emit('error', new gutil.PluginError(PLUGIN_NAME, err));
+            } else {
+                file.contents = new Buffer(html || '');
+                self.push(file);
+            }
+            cb();
+        });
     });
 
     return stream;
