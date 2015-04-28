@@ -21,9 +21,7 @@ function gulpInlineSource (options) {
         }
 
         options = options || {};
-
-        var filePath = file.path;
-        options.rootpath = options.rootpath || filePath;
+        options.rootpath = options.rootpath || file.base;
 
         inlineSource(file.contents.toString(), options, function(err, html){
             if(err){
