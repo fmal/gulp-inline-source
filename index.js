@@ -22,6 +22,7 @@ function gulpInlineSource (options) {
 
         options = options || {};
         options.rootpath = options.rootpath || file.base;
+        options.htmlpath = options.htmlpath || file.path;
 
         inlineSource(file.contents.toString(), options, function(err, html){
             if(err){
