@@ -7,7 +7,7 @@ const PLUGIN_NAME = 'gulp-inline-source';
 function gulpInlineSource (options) {
     'use strict';
 
-    var stream = through.obj(function(file, enc, cb) {
+    var stream = through.obj(function (file, enc, cb) {
         var self = this;
 
         if (file.isNull() || file.isDirectory()) {
@@ -24,13 +24,14 @@ function gulpInlineSource (options) {
         options.rootpath = options.rootpath || file.base;
         options.htmlpath = options.htmlpath || file.path;
 
-        inlineSource(file.contents.toString(), options, function(err, html){
-            if(err){
+        inlineSource(file.contents.toString(), options, function (err, html) {
+            if (err) {
                 self.emit('error', new gutil.PluginError(PLUGIN_NAME, err));
             } else {
                 file.contents = new Buffer(html || '');
                 self.push(file);
             }
+
             cb();
         });
     });
