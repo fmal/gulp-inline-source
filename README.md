@@ -2,6 +2,7 @@
 
 [![NPM Version](https://img.shields.io/npm/v/gulp-inline-source.svg)](https://www.npmjs.com/package/gulp-inline-source)
 [![Build Status](https://travis-ci.org/fmal/gulp-inline-source.svg?branch=master)](https://travis-ci.org/fmal/gulp-inline-source)
+[![Dependency Status](https://img.shields.io/gemnasium/fmal/gulp-inline-source.svg)](https://gemnasium.com/fmal/gulp-inline-source)
 
 > Inline all `<script>`, `<link>` and `<img>` tags that contain the `inline` attribute with [inline-source](https://github.com/popeindustries/inline-source).
 
