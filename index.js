@@ -20,11 +20,18 @@ function gulpInlineSource (options) {
             return cb();
         }
 
-        options = options || {};
-        options.rootpath = options.rootpath || file.base;
-        options.htmlpath = options.htmlpath || file.path;
+        var fileOptions = {
+          rootpath: file.base,
+          htmlpath: file.path
+        };
 
-        inlineSource(file.contents.toString(), options, function (err, html) {
+        if (options) {
+          for (var i in options) {
+            fileOptions[i] = options[i];
+          }
+        }
+
+        inlineSource(file.contents.toString(), fileOptions, function (err, html) {
             if (err) {
                 self.emit('error', new gutil.PluginError(PLUGIN_NAME, err));
             } else {
