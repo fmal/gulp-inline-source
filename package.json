@@ -1,6 +1,6 @@
 {
   "name": "gulp-inline-source",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "Inline flagged js & css sources.",
   "license": "MIT",
   "author": "Filip Malinowski <filip@fmal.me>",
@@ -16,12 +16,12 @@
   },
   "dependencies": {
     "inline-source": "~4.0.1",
-    "gulp-util": "~2.2.14",
-    "through2": "~0.4.1"
+    "gulp-util": "~3.0.6",
+    "through2": "~2.0.0"
   },
   "main": "index.js",
   "devDependencies": {
     "faucet": "0.0.1",
-    "tape": "^3.5.0"
+    "tape": "^4.0.1"
   }
 }
