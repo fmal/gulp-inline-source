@@ -15,9 +15,9 @@
     "test": "tape test/*.js | faucet"
   },
   "dependencies": {
-    "inline-source": "~4.0.1",
-    "gulp-util": "~3.0.6",
-    "through2": "~2.0.0"
+    "inline-source": "^4.3.0",
+    "gulp-util": "^3.0.7",
+    "through2": "^2.0.1"
   },
   "main": "index.js",
   "devDependencies": {
