@@ -15,7 +15,7 @@
     "test": "tape test/*.js | faucet"
   },
   "dependencies": {
-    "inline-source": "~4.0.1",
+    "inline-source": "https://github.com/yedaodao/inline-source.git",
     "gulp-util": "~3.0.6",
     "through2": "~2.0.0"
   },
