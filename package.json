@@ -1,6 +1,6 @@
 {
   "name": "gulp-inline-source",
-  "version": "2.1.0",
+  "version": "3.0.0",
   "description": "Inline flagged js & css sources.",
   "license": "MIT",
   "author": "Filip Malinowski <filip@fmal.me>",
