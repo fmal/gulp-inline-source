@@ -24,7 +24,7 @@ function getExpected (filePath) {
 
 function compare (stream, fixtureName, expectedName, t) {
     stream.on('data', function (newFile) {
-        t.equal(String(getExpected(expectedName).contents), String(newFile.contents));
+        t.equal(String(newFile.contents), String(getExpected(expectedName).contents));
     });
 
     stream.on('end', function () {
