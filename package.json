@@ -15,7 +15,7 @@
     "test": "tape test/*.js | faucet"
   },
   "dependencies": {
-    "inline-source": "^4.3.0",
+    "inline-source": "^5.0.0",
     "gulp-util": "^3.0.7",
     "through2": "^2.0.1"
   },
