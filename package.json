@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "gulp-util": "~3.0.6",
-    "inline-source": "~5.0.0",
+    "inline-source": "^5.0.0",
     "through2": "~2.0.0"
   },
   "main": "index.js",
