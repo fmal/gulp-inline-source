@@ -1,5 +1,6 @@
 var inlineSource = require('inline-source'),
     gutil = require('gulp-util'),
+    path = require('path'),
     through = require('through2');
 
 const PLUGIN_NAME = 'gulp-inline-source';
@@ -21,7 +22,7 @@ function gulpInlineSource (options) {
         }
 
         var fileOptions = {
-          rootpath: file.base,
+          rootpath: path.dirname(file.path),
           htmlpath: file.path
         };
 
