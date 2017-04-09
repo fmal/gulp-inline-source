@@ -1,6 +1,6 @@
 {
   "name": "gulp-inline-source",
-  "version": "3.0.0",
+  "version": "0.0.0-development",
   "description": "Inline flagged js & css sources.",
   "license": "MIT",
   "author": "Filip Malinowski <filip@fmal.me>",
@@ -12,7 +12,11 @@
     "javascript"
   ],
   "scripts": {
-    "test": "tape test/*.js | faucet"
+    "test": "tape test/*.js | faucet",
+    "commit": "git-cz",
+    "commitmsg": "validate-commit-msg",
+    "prepush": "npm test",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "dependencies": {
     "gulp-util": "~3.0.6",
@@ -21,7 +25,17 @@
   },
   "main": "index.js",
   "devDependencies": {
+    "commitizen": "^2.9.6",
+    "cz-conventional-changelog": "^2.0.0",
     "faucet": "0.0.1",
-    "tape": "^4.0.1"
+    "husky": "^0.13.3",
+    "semantic-release": "^6.3.2",
+    "tape": "^4.0.1",
+    "validate-commit-msg": "^2.12.1"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }

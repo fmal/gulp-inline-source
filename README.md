@@ -1,8 +1,9 @@
 # gulp-inline-source
 
-[![NPM Version](https://img.shields.io/npm/v/gulp-inline-source.svg)](https://www.npmjs.com/package/gulp-inline-source)
-[![Build Status](https://travis-ci.org/fmal/gulp-inline-source.svg?branch=master)](https://travis-ci.org/fmal/gulp-inline-source)
-[![Dependency Status](https://img.shields.io/gemnasium/fmal/gulp-inline-source.svg)](https://gemnasium.com/fmal/gulp-inline-source)
+[![NPM Version](https://img.shields.io/npm/v/gulp-inline-source.svg?style=flat-square)](https://www.npmjs.com/package/gulp-inline-source)
+[![Build Status](https://img.shields.io/travis/fmal/gulp-inline-source/master.svg?style=flat-square)](http://travis-ci.org/fmal/gulp-inline-source) 
+[![Semantic Release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg?style=flat-square)](https://github.com/semantic-release/semantic-release)
+[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg?style=flat-square)](http://commitizen.github.io/cz-cli/)
 
 > Inline all `<script>`, `<link>` and `<img>` tags that contain the `inline` attribute with [inline-source](https://github.com/popeindustries/inline-source).
 
