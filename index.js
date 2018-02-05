@@ -22,14 +22,14 @@ function gulpInlineSource (options) {
         }
 
         var fileOptions = {
-          rootpath: path.dirname(file.path),
-          htmlpath: file.path
+            rootpath: path.dirname(file.path),
+            htmlpath: file.path
         };
 
         if (options) {
-          for (var i in options) {
-            fileOptions[i] = options[i];
-          }
+            for (var i in options) {
+                fileOptions[i] = options[i];
+            }
         }
 
         inlineSource(file.contents.toString(), fileOptions, function (err, html) {
