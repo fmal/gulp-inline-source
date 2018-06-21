@@ -1,5 +1,5 @@
 var inlineSource = require('inline-source'),
-    gutil = require('gulp-util'),
+    PluginError = require('plugin-error'),
     path = require('path'),
     through = require('through2');
 
@@ -17,7 +17,7 @@ function gulpInlineSource (options) {
         }
 
         if (file.isStream()) {
-            this.emit('error', new gutil.PluginError(PLUGIN_NAME, 'Streaming not supported'));
+            this.emit('error', new PluginError(PLUGIN_NAME, 'Streaming not supported'));
             return cb();
         }
 
@@ -34,7 +34,7 @@ function gulpInlineSource (options) {
 
         inlineSource(file.contents.toString(), fileOptions, function (err, html) {
             if (err) {
-                self.emit('error', new gutil.PluginError(PLUGIN_NAME, err));
+                self.emit('error', new PluginError(PLUGIN_NAME, err));
             } else {
                 file.contents = new Buffer(html || '');
                 self.push(file);
