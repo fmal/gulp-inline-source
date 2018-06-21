@@ -1,13 +1,13 @@
 'use strict';
 
 var path = require('path'),
-    gutil = require('gulp-util'),
+    Vinyl = require('vinyl'),
     fs = require('fs'),
     test = require('tape'),
     inlinesource = require('../');
 
 function getFile (filePath, contents) {
-    return new gutil.File({
+    return new Vinyl({
         path: filePath,
         base: path.dirname(filePath),
         contents: contents || fs.readFileSync(filePath)
