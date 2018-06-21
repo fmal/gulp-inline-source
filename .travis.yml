@@ -2,18 +2,15 @@ language: node_js
 cache:
   directories:
     - node_modules
+    - ~/.npm
 node_js:
-  - '7'
+  - '9'
   - '6'
   - '4'
-notifications:
-  email: false
-before_script:
-  - npm prune
-script:
-  - npm run test
+before_install:
+  - echo "//registry.npmjs.org/:_authToken=\${NPM_TOKEN}" > .npmrc
 after_success:
-  - npm run semantic-release
+  - npm run travis-deploy-once "npm run semantic-release"
 branches:
   except:
     - /^v\d+\.\d+\.\d+$/
