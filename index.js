@@ -1,4 +1,4 @@
-var inlineSource = require('inline-source'),
+var { inlineSource } = require('inline-source'),
     PluginError = require('plugin-error'),
     path = require('path'),
     through = require('through2');
@@ -8,7 +8,7 @@ const PLUGIN_NAME = 'gulp-inline-source';
 function gulpInlineSource (options) {
     'use strict';
 
-    var stream = through.obj(function (file, enc, cb) {
+    return through.obj(function (file, enc, cb) {
         var self = this;
 
         if (file.isNull() || file.isDirectory()) {
@@ -32,19 +32,16 @@ function gulpInlineSource (options) {
             }
         }
 
-        inlineSource(file.contents.toString(), fileOptions, function (err, html) {
-            if (err) {
-                self.emit('error', new PluginError(PLUGIN_NAME, err));
-            } else {
-                file.contents = new Buffer(html || '');
+        inlineSource(file.contents.toString(), fileOptions)
+            .then(html => {
+                file.contents = Buffer.from(html || '');
                 self.push(file);
-            }
-
-            cb();
-        });
+                cb();
+            })
+            .catch(err => {
+                self.emit('error', new PluginError(PLUGIN_NAME, err));
+            });
     });
-
-    return stream;
 }
 
 module.exports = gulpInlineSource;
