@@ -21,7 +21,7 @@
   },
   "dependencies": {
     "plugin-error": "~1.0.1",
-    "inline-source": "~5.2.6",
+    "inline-source": "~6.1.8",
     "through2": "~2.0.0"
   },
   "main": "index.js",
