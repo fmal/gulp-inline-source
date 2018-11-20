@@ -4,11 +4,9 @@ cache:
     - node_modules
     - ~/.npm
 node_js:
-  - '9'
-  - '6'
-  - '4'
-before_install:
-  - echo "//registry.npmjs.org/:_authToken=\${NPM_TOKEN}" > .npmrc
+  - "9"
+  - "6"
+  - "4"
 after_success:
   - npm run travis-deploy-once "npm run semantic-release"
 branches:
