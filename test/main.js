@@ -1,10 +1,10 @@
 'use strict';
 
-var path = require('path'),
-    Vinyl = require('vinyl'),
-    fs = require('fs'),
-    test = require('tape'),
-    inlinesource = require('../');
+const path = require('path');
+const Vinyl = require('vinyl');
+const fs = require('fs');
+const test = require('tape');
+const inlinesource = require('../');
 
 function getFile (filePath, contents) {
     return new Vinyl({
@@ -60,7 +60,7 @@ test('works with relative paths', function (t) {
 });
 
 test('inlines assets without minification', function (t) {
-    var stream = inlinesource({
+    const stream = inlinesource({
         compress: false
     });
 
@@ -69,17 +69,17 @@ test('inlines assets without minification', function (t) {
 
 test('throws when trying to compress non-ES5 syntax', function (t) {
     t.plan(1);
-    
-    var stream = inlinesource({ compress: true });
-    
+
+    const stream = inlinesource({ compress: true });
+
     stream.on('error', function (err) {
         t.pass();
     });
-    
+
     stream.on('finish', function () {
         t.end();
     });
-    
+
     stream.write(getFixture('script-es6.html'));
     stream.end();
 });

@@ -11,6 +11,9 @@
     "css",
     "javascript"
   ],
+  "engines": {
+    "node": ">=7.6"
+  },
   "scripts": {
     "test": "tape test/*.js | faucet",
     "commit": "git-cz",

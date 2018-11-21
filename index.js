@@ -1,13 +1,13 @@
-var { inlineSource } = require('inline-source'),
-    PluginError = require('plugin-error'),
-    path = require('path'),
-    through = require('through2');
+'use strict';
+
+const { inlineSource } = require('inline-source');
+const PluginError = require('plugin-error');
+const path = require('path');
+const through = require('through2');
 
 const PLUGIN_NAME = 'gulp-inline-source';
 
 function gulpInlineSource (options) {
-    'use strict';
-
     return through.obj(function (file, enc, cb) {
         var self = this;
 

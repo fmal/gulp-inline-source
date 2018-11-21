@@ -5,8 +5,7 @@ cache:
     - ~/.npm
 node_js:
   - "9"
-  - "6"
-  - "4"
+  - "7.6"
 after_success:
   - npm run travis-deploy-once "npm run semantic-release"
 branches:
