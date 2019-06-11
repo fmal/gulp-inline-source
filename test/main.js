@@ -66,20 +66,3 @@ test('inlines assets without minification', function (t) {
 
     compare(stream, 'nominify.html', 'inlined-nominify.html', t);
 });
-
-test('throws when trying to compress non-ES5 syntax', function (t) {
-    t.plan(1);
-
-    const stream = inlinesource({ compress: true });
-
-    stream.on('error', function (err) {
-        t.pass();
-    });
-
-    stream.on('finish', function () {
-        t.end();
-    });
-
-    stream.write(getFixture('script-es6.html'));
-    stream.end();
-});
